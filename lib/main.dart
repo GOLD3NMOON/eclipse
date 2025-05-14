@@ -1,4 +1,5 @@
 import 'package:eclipse/app/pages/login_page.dart';
+import 'package:eclipse/app/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,9 +10,28 @@ void main() {
 class Application extends StatelessWidget {
   Application({super.key});
 
-  final _router = GoRouter(
-    routes: <GoRoute>[
-      GoRoute(path: '/', builder: (context, state) => const LoginPage()),
+  final GoRouter _router = GoRouter(
+    initialLocation: '/',
+    routes: <RouteBase>[
+      GoRoute(
+        path: '/',
+        builder:
+            (BuildContext context, GoRouterState state) => const LoginPage(),
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'login',
+            builder:
+                (BuildContext context, GoRouterState state) =>
+                    const LoginPage(),
+          ),
+          GoRoute(
+            path: 'sign_up',
+            builder:
+                (BuildContext context, GoRouterState state) =>
+                    const SignUpPage(),
+          ),
+        ],
+      ),
     ],
   );
 

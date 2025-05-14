@@ -1,16 +1,16 @@
 import 'package:eclipse/app/components/custom_text_form_field.dart';
-import 'package:eclipse/app/pages/sign_up_page.dart';
+import 'package:eclipse/app/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Hi, Welcome Back! ",
+                    "Create an account! ",
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   Icon(Icons.waving_hand_outlined, size: 35),
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               alignment: Alignment.center,
               child: Text(
-                "Sign In to Continue",
+                "Sign Up to Continue",
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 20,
@@ -67,6 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   CustomTextFormField(hintText: "Email"),
                   CustomTextFormField(hintText: "Password"),
+                  CustomTextFormField(hintText: "Confirm Password"),
                   OutlinedButton(
                     onPressed: () {},
                     style: OutlinedButton.styleFrom(
@@ -74,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                       minimumSize: Size(double.infinity, 50),
                       alignment: Alignment.center,
                     ),
-                    child: Text("Login"),
+                    child: Text("Sign Up"),
                   ),
                 ],
               ),
@@ -82,16 +83,16 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don't have an account?"),
+                Text("Already have an account? "),
                 TextButton(
                   onPressed: () {
-                    context.go("/sign_up");
+                    context.go('/login');
                   },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
-                    overlayColor: Color.fromRGBO(0, 0, 0, 0),
+                    overlayColor: Colors.transparent,
                   ),
-                  child: Text("Sign Up"),
+                  child: Text("Sign In"),
                 ),
               ],
             ),
