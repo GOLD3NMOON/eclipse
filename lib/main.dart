@@ -38,7 +38,7 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: "Wal0",
+      title: "Eclipse",
       themeMode: ThemeMode.system,
       theme: ThemeData(
         brightness:
