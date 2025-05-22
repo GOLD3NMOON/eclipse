@@ -18,7 +18,7 @@ Eclipse’s interface is heavily inspired by the official Revolt mobile client. 
 
 | Feature               | Status |
 | :-------------------- | :----- |
-| Login                 | ✔️     |
+| Login                 | ☐     |
 | Signup                | ☐      |
 | Home Page             | ☐      |
 | Direct Messages (DMs) | ☐      |
